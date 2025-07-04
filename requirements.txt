@@ -3,4 +3,6 @@ gunicorn
 mysqlclient
 djangorestframework
 dj-database-url
+psycopg2-binary
+
 
