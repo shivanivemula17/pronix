@@ -78,7 +78,9 @@ WSGI_APPLICATION = 'pronix.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://pronix_db_user:LurlxG9dt74tMzmzB5NKcCryggcXTy6P@dpg-d1k23aqli9vc738vprj0-a:5432/pronix_db'
+        default=os.environ.get("DATABASE_URL"),
+        conn_max_age=600,
+        ssl_require=True
     )
 }
 
