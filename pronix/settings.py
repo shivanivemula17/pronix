@@ -77,12 +77,8 @@ WSGI_APPLICATION = 'pronix.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pronix_db',
-        'USER':'root',
-        'PASSWORD':'123shiva@V',
-    }
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL')
 }
 
 
