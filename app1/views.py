@@ -2,6 +2,14 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, HttpResponse
 import json
 from .models import Consultation
+from django.contrib.auth.models import User
+
+def create_superuser(request):
+    if not User.objects.filter(username="admin").exists():
+        User.objects.create_superuser("shivani", "shivani@example.com", "123shiva@V")
+        return HttpResponse("Superuser created ✅")
+    else:
+        return HttpResponse("Superuser already exists 🚫")
 
 @csrf_exempt
 def save_consultation(request):
