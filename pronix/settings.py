@@ -77,14 +77,9 @@ WSGI_APPLICATION = 'pronix.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pronix_db',
-        'USER': 'pronix_db_user',
-        'PASSWORD': 'LurlxG9dt74tMzmzB5NKcCryggcXTy6P',
-        'HOST': 'dpg-d1k23aqli9vc738vprj0-a',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        default='postgres://pronix_db_user:LurlxG9dt74tMzmzB5NKcCryggcXTy6P@dpg-d1k23aqli9vc738vprj0-a:5432/pronix_db'
+    )
 }
 
 
