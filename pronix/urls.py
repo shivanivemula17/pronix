@@ -20,6 +20,5 @@ from app1 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('save/', views.save_consultation, name='save_consultation'), 
-    path('create-admin/', views.create_superuser),
+    path('', views.save_consultation, name='save_consultation'), 
 ]
